@@ -1,0 +1,30 @@
+Install django $  pip install django
+
+Install Virtual Environment wrapper $ pip install virtualenvwrapper-win
+
+Activate Virtual Environment in Project $ mkvirtualenv <Type name of virtual environment>
+
+//Note you can install django globally on you system but when you create a virtal environment you will need to install django in it again
+
+Create a django project $ django-admin startproject <give name of project>
+
+Open existing virtual environment $ workon django_app
+
+Deactive existing virtual environment $ deactivate
+
+Create a subapp inside you main project first cd to the root of main project then run $ python manage.py startapp <give name of sub app>
+
+Run your Django code $ python manage.py runserver
+
+Make migration  $ python manage.py makemigrations
+                $ python manage.py migrate  
+Create admin user for python dashboard $ python manage.py createsuperuser
+
+//Connecting postgresql and pgadmin
+
+Install two libraries $ pip install psycopg2
+                      $ pip install pillow
+
+run $  python manage.py makemigrations then $ python manage.py migrate   
+
+To install Django rest framework $ pip install djangorestframework

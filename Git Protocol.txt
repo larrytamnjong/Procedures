@@ -1,0 +1,74 @@
+To initialiaze git simply write 
+cd Desktop/ 
+mkdir DirectoryName
+touch fileName.extension
+
+ls command shows everything in the file
+
+
+1) git init
+
+2) ls -a //command shows hidden files in a repository
+
+3) git status //command shows files in the staging area which can be tracked or changed files which have not been commited
+
+4) git add filename.extension //command will add the file to the staging  area ready for commit
+
+5) git commit //command to commit and you can add 
+
+6) git commit -m "Enter comment" //To add comment to commit
+
+6b) git log //command shows various commits
+
+7) git add . //command adds all files in the directory to the staging area
+
+8) git diff fileName.txt //Will show the changes made
+
+9) git checkout fileName.txt //Will roll back to previous version that was committed to the local repository
+
+///////
+
+10) create remote repository on github.com by clicking the plus arrow beside your profile icon and copy the link to set up via command line 
+11) Go into your local directory 
+12) git remote add origin urlFromGitHub
+13) git push -u origin main
+13) git push --set-upstream origin larry_vlsm will push a local branch created called larry_vlsm
+13a) git pull //will pull all changes
+
+/// 
+14) touch .gitignore //will create a hidden file for hidden github files
+15) git rm --cached -r . //To remove files from the staging area
+16) Add on each line the file names with extension to the gitignore file (You can use ##To comment) (using *.txt will ignore all .txt files)
+17) clear //To clear terminal
+
+///Cloning a Repository
+
+18) git clone urlOFRepo
+
+///Branching and Merging
+19) git branch nameofBranch //Creates a branch with the specified name
+20) git branch //will tell you branches you have and you current branch
+21) git checkout nameofBranch //will switch you to that branch
+22) To merge changes from branches first go back to master branch then run (git merge branchName) after the command it will direct you to page enter :q! to save and quit
+
+///Creating branches and merging in GitHub without terminal
+1) Create Repo and initialize with read me
+2) Go into main repo and create new file add some text and make commit 
+3) Go Main and create a new branch press enter it will copy all your code from master to the created branch at that point in time (You can make changes in the branch)
+4) Inorder to pull; be in the master branch(Or branch you want to pull into)
+5) Once in the master branch or branch you want to pull into take "new pull request"
+6) You will be taken to a compare page You'll see you can compare between base: master ---- compare: branchName
+7) Take "create Pull Request" then take "Confirm Merge"
+
+///Colaboration Forking and Pull Request
+1) Forking a repo makes it avialable on your account and you can change it as you want
+2) Search repository you want to Fork and take Fork
+3) Make changes to the files you want 
+4) The main owner of the repo can go to insight and network and graphs to see persons who have forked the account
+5) After creating and merging changes on forked account create a pull request for original repo owner to review
+6)
+
+//Push branch to origin
+git push origin [name_of_your_new_branch]
+//Pull changes from main branch to dev branch
+git pull --rebase origin main

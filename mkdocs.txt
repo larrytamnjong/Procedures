@@ -1,0 +1,95 @@
+install mkdocs $ pip install mkdocs-material
+create new mkdocs app $ mkdocs new . 
+run the create in the root of your project
+run using $ mkdocs serve
+
+To deploy Create a folders .github/workflows/ci.yml in the root of your project
+in the ci.ym file add this code 
+
+name: ci 
+on:
+  push:
+    branches:
+      - master 
+      - main
+permissions:
+  contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
+      - uses: actions/cache@v3
+        with:
+          key: mkdocs-material-${{ env.cache_id }}
+          path: .cache
+          restore-keys: |
+            mkdocs-material-
+      - run: pip install mkdocs-material 
+      - run: mkdocs gh-deploy --force
+
+
+In github go to setting/pages/select gh-deploy/ select root
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+
+# Welcome to Mboalab
+
+For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+
+## Commands
+
+* `mkdocs new [dir-name]` - Create a new project.
+* `mkdocs serve` - Start the live-reloading docs server.
+* `mkdocs build` - Build the documentation site.
+* `mkdocs -h` - Print help message and exit.
+
+## Project layout
+
+    mkdocs.yml    # The configuration file.
+    docs/
+        index.md  # The documentation homepage.
+        ...       # Other markdown pages, images and other files.
+
+## Code Annotation 
+
+### Codeblocks
+Some `Code` goes here
+
+### Plain codeblocks
+
+```
+Alot of code goes in here
+Alot of code goes in here
+```
+
+``` py
+import tensorflow as if
+def whatever()
+```
+
+``` py title="Title"
+import tensorflow as if
+def whatever()
+```
+
+``` py linenums="1"
+import tensorflow as if
+def whatever()
+```
+
+``` py hl_lines="2 3"
+import tensorflow as if
+def whatever()
+```
+

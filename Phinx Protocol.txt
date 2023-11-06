@@ -1,0 +1,11 @@
+1) Run composer init in the root file
+2) Enter all basic information when you reach package enter project and install robmorgan/phinx
+3) Run ./vendor/bin/phinx init
+4) Run ./vendor/bin/phinx init --format=json
+5) Create folder db/migrations
+6) To Create a migration file Run ./vendor/bin/phinx create CopyDataFromExistingDatabase
+7) To Run a migration run ./vendor/bin/phinx migrate
+
+In case where you already have an existing project
+1) Run composer require robmorgan/phinx
+Then continue with step 3 and so on...
